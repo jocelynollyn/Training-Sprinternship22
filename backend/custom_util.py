@@ -4,19 +4,33 @@ from constants import DATABASE_NAME, TABLE_NAME, BITCOIN_CURRENT_PRICE_URL
 from datetime import datetime
 import requests
 
-# TODO (5.1) 
-def get_live_bitcoin_price():
-    """
-    gets live price of bitcoin from bitcoin open API
 
-    :return:
-        the price in USD
-    :rtype:
-        float
-    """
+
+# TO DO (5.1) 
+def get_live_bitcoin_price():
+
+    BITCOIN_CURRENT_PRICE_URL = 'https://api.coindesk.com/v1/bpi/currentprice.json'
+
+# make get request
+    response = requests.get( BITCOIN_CURRENT_PRICE_URL)
+
+# check if response status code is 200
+    if response.status_code == 200:
+    # get response body in text
+        print(response.text)
+
+    # convert response body to JSON
+        BITCOIN_CURRENT_PRICE_URL = response.json()
+        print('BitCoin Price in USD' + BITCOIN_CURRENT_PRICE_URL['bpi']['USD']['rate'])
+
+# otherwise, print error code
+    else:
+        print(-1)   
+
     pass
 
 def create_database():
+    
     """
     creates a bitcoin database with a table of timestamp (TEXT) and price (REAL/float) fields
 
