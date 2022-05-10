@@ -4,8 +4,6 @@ from constants import DATABASE_NAME, TABLE_NAME, BITCOIN_CURRENT_PRICE_URL
 from datetime import datetime
 import requests
 
-
-
 # TO DO (5.1) 
 def get_live_bitcoin_price():
 
@@ -17,17 +15,17 @@ def get_live_bitcoin_price():
 # check if response status code is 200
     if response.status_code == 200:
     # get response body in text
-        print(response.text)
+    # print(response.text)
 
     # convert response body to JSON
         BITCOIN_CURRENT_PRICE_URL = response.json()
-        print('BitCoin Price in USD' + BITCOIN_CURRENT_PRICE_URL['bpi']['USD']['rate'])
+    # print('BitCoin Price in USD' + BITCOIN_CURRENT_PRICE_URL['bpi']['USD']['rate'])
+        price = BITCOIN_CURRENT_PRICE_URL['bpi']['USD']['rate'].replace(',','')
+        return float(price)
 
 # otherwise, print error code
     else:
-        print(-1)   
-
-    pass
+        return(-1)   
 
 def create_database():
     
