@@ -14,10 +14,6 @@ if response.status_code == 200:
     # convert response body to JSON
     data = response.json()
     print('BitCoin Price in USD' + data['bpi']['USD']['rate'])
-    
-
-
-
 
 # otherwise, print error code
 else:
