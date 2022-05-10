@@ -39,14 +39,15 @@ async def root():
 """
 repeated task to update bitcoin prices periodically
 """
+@app.on_event("startup")
 @repeat_every(seconds = 60 * 5)  # 5 minutes
 
-def get_live_bitcoin_price() -> None:
+async def getPrice() -> None:
     num = get_live_bitcoin_price()
     if num != -1:
         date = convert_date_to_text(datetime.now())
-        new = BitcoinTimestamp(date,num)
-    app2.insert_timestamp()
+        n = BitcoinTimestamp(date,num)
+        app2.insert_timestamp(n)
 
 
 # TODO (5.4.3)
@@ -56,8 +57,9 @@ async def get_all_timestampes():
     newList = []
 
     for i in content:
-        newList.append(i.__dict__)
-    
+        n = BitcoinTimestamp(i[0], i[1])
+        newList.append(n.__dict__)
+        
     return json.dumps(newList)   
 
 #main function to run the server        
