@@ -34,14 +34,14 @@ class DatabaseConnection:
         try:
             # TODO (5.3.2)  
             # insert sql query
-            sql = "INSERT * INTO '{}';".format(BitcoinTimestamp)
+            sql = "INSERT INTO '{}' (timestamp,price) VALUES ('{}','{}') ;".format(TABLE_NAME,bitcoin.timestamp,bitcoin.price)
 
             # execute sql query
             cursor.execute(sql)
 
             # commit to db
             # __db = sql.connect(BitcoinTimestamp)
-            cursor.commit()
+            self.__db.commit()
 
             # close
             cursor.close()
@@ -80,7 +80,7 @@ class DatabaseConnection:
             cursor.close()
 
             # convert results to BitcoinTimestamp objects and append to output
-            return output
+            return results
         except Error as e:
             print(e)
             return []
