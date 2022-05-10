@@ -4,4 +4,3 @@ class BitcoinTimestamp:
         self.timestamp = timestamp
         self.price = price
         
-        pass
