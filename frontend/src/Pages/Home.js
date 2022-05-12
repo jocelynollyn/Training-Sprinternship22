@@ -10,6 +10,7 @@ function Home () {
   const [data, setData] = useState([])
   const [shownData, setShown] = useState([])
   const [currency, setCurrency] = useState("USD")
+  const [difference, setDifference] = useState(0)
   
   // ToDo 10.3.2
   /* 
@@ -90,11 +91,13 @@ function Home () {
             
             <div className={styles.bodyContainer}>
             <div className={styles.bodyContainerMargin}>
-            <div className={styles.bodyContainer}>
-            <h1> BITCOIN PRICES </h1>
-            </div>
+            <div className={styles.title}>
+            <br></br>
+            <h1 div className={styles.title}><center> BITCOIN PRICES </center></h1>
+            <br></br>
             <CurrencyButton currency={currency} changeCurrency={changeCurrency}/>
             <TimeCurrencyCard currency={currency} showData={shownData}/>
+            </div>
             </div>
             </div>
       </>
