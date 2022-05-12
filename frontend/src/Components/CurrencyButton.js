@@ -10,7 +10,7 @@ import styles from "./CurrencyButton.module.css"
 :type:
   function
 */
-function CurrencyButton ({currency,changeCurrency}) {
+function CurrencyButton ({currency,changeCurrency, differences}) {
 
   // ToDo 10.1
   return (
@@ -21,11 +21,11 @@ function CurrencyButton ({currency,changeCurrency}) {
           className={currency === 'USD' ? styles.currencyButtonActive : styles.currencyButtonActive} 
           /*in the value */> USD </button>
         
-         <button onClick={()=>changeCurrency("JPY")}  
+        <button onClick={()=>changeCurrency("JPY")}  
           className={currency === 'JPY' ? styles.currencyButtonDefault : styles.currencyButtonDefault} 
           /*in the value */> JPY </button>
-       
 
+        <button onClick={()=>differences()} className={styles.currencyDifference}> Diff. </button>
     </div>   
   );
 
