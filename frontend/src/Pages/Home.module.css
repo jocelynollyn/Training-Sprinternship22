@@ -1,7 +1,14 @@
 .bodyContainer{
     background-color: #1d1d1d;
-    font-family: Helvetica;
+    font-family: Tahoma;
     color: white;
+    margin: 0px;
+
+}
+
+.title{
+    background-color: #1d1d1d;
+    font-family: Tahoma;
 }
 
 .bodyContainerMargin{
