@@ -18,13 +18,13 @@ function CurrencyButton ({currency,changeCurrency}) {
 
         
         <button onClick={()=>changeCurrency("USD")}
-          className={currency === 'USD' ? styles.currencyButtonActive : styles.currencyButtonDefault} 
+          className={currency === 'USD' ? styles.currencyButtonActive : styles.currencyButtonActive} 
           /*in the value */> USD </button>
         
 
         
          <button onClick={()=>changeCurrency("JPY")}  
-          className={currency === 'JPY' ? styles.currencyButtonActive : styles.currencyButtonDefault} 
+          className={currency === 'JPY' ? styles.currencyButtonDefault : styles.currencyButtonDefault} 
           /*in the value */> JPY </button>
        
 
