@@ -68,6 +68,15 @@ function TimeCurrencyCard ({currency,showData}) {
     
     }
     
+     const priceDif = (index) => {
+        if (index+1 == showData.length) {
+            return "///"
+        }
+        else {
+            return  showData[index].price - showData[index+1].price;
+      }
+    }
+
     // ToDo 10.2.3
     return (
             <>
@@ -83,7 +92,7 @@ function TimeCurrencyCard ({currency,showData}) {
                 {d.price}
                 {/* currency={currency} changeCurrency={changeCurrency} */} 
                 {arrowSign(index)}
-              
+                {/* {priceDif(index)} */}
                 </div>
             
               </div>       
