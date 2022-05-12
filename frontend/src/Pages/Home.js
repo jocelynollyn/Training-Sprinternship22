@@ -10,7 +10,7 @@ function Home () {
   const [data, setData] = useState([])
   const [shownData, setShown] = useState([])
   const [currency, setCurrency] = useState("USD")
-  const [difference, setDifference] = useState(0)
+  const [difference, setDifference] = useState(true)
   
   // ToDo 10.3.2
   /* 
@@ -83,20 +83,23 @@ function Home () {
       setCurrency(currency);
     }
   
+  const differences = () => {
+      setDifference(!difference)
+  }
+ 
 
   // ToDo 10.3.5
   // call CurrencyButton and TimeCurrencyCard pass the variables
   return (
       <>
-            
             <div className={styles.bodyContainer}>
             <div className={styles.bodyContainerMargin}>
             <div className={styles.title}>
             <br></br>
             <h1 div className={styles.title}><center> BITCOIN PRICES </center></h1>
             <br></br>
-            <CurrencyButton currency={currency} changeCurrency={changeCurrency}/>
-            <TimeCurrencyCard currency={currency} showData={shownData}/>
+            <CurrencyButton currency={currency} changeCurrency={changeCurrency} differences={differences}/>
+            <TimeCurrencyCard currency={currency} showData={shownData} difference={difference}/>
             </div>
             </div>
             </div>
