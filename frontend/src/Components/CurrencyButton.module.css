@@ -13,6 +13,7 @@
     margin: 0;
     position: absolute;
     font-weight: bold;
+    font-family: Tahoma;
 }
 
 .currencyButtonDefault {
@@ -23,7 +24,7 @@
     padding: 8px;
     border: 0;
     position: absolute;
-    top: 80px;
-    
-
+    top: 30px;
+    font-weight: bold;
+    font-family: Tahoma;
 }
