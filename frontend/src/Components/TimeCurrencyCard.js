@@ -94,7 +94,7 @@ function TimeCurrencyCard ({currency,showData,difference}) {
                 {d.price}
                 {/* currency={currency} changeCurrency={changeCurrency} */} 
                 {arrowSign(index)}
-                {difference ? d.price : priceDif(index)}
+                {difference ? priceDif(index) : "" }
                 {/* {priceDif(index)} */}
                 </div>
             
