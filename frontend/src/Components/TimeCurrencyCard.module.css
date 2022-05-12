@@ -1,14 +1,28 @@
+.bodyContainer {
+    background-color: #1d1d1d;
+}
+
 .cardContainer {
+background-color: #1d1d1d;
+display: flex;
+justify-content: space-evenly;
+align-content: space-between;
+
 }
 
 .priceContainerUp {
+    color: green;
 }
 
 .priceContainerDown {
+    color: red;
 }
 
 .priceContainerEqual {
+    color: #db9452;
 }
 
 .timeContainer {
+color: #bfd6ff;
+background-color: #1d1d1d;
 }
